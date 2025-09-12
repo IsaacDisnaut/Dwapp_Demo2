@@ -116,6 +116,27 @@
                     <video height="300" id="remote-video" controls class="remote-video" hidden></video>
                 </div>
             </div>
+            const innerCircles = document.querySelectorAll(".inner-circle");
+<script>
+// ค่าเริ่มต้น (ตรงกลาง)
+let posX = 50;
+let posY = 50;
+
+document.addEventListener("keydown", (event) => {
+  if (event.key === "a") posX = 30;      // ซ้าย
+  if (event.key === "d") posX = 70;      // ขวา
+  if (event.key === "w") posY = 30;      // ขึ้น
+  if (event.key === "s") posY = 70;      // ลง
+  if (event.key === " ") {               // Spacebar รีเซ็ต
+    posX = 50;
+    posY = 50;
+  }
+
+  innerCircles.forEach(circle => {
+    circle.style.left = posX + "%";
+    circle.style.top = posY + "%";
+  });
+});
  <div class="container" >
     <div class="outer-circle">
       <div class="inner-circle"></div>
@@ -125,7 +146,7 @@
     </div>
   </div>
 
-   
+   <\script>
 
 
 
@@ -155,3 +176,4 @@
 
 
 </html>
+
