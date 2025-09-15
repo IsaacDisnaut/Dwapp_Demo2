@@ -88,7 +88,7 @@ function joinRoom() {
         getUserMedia({ video: true, audio: true }, (stream) => {
             local_stream = stream;
             setLocalStream(local_stream)
-           
+            console.log("getUsermedia Sucess")
             let call = peer.call(room_id, stream)
             call.on('stream', (stream) => {
                 setRemoteStream(stream);
@@ -96,6 +96,7 @@ function joinRoom() {
             })
             currentPeer = call;
         }, (err) => {
+            console.log("getUsermedia Failed")
             console.log(err)
         })
 
@@ -257,3 +258,4 @@ document.addEventListener("keydown", (event) => {
     circle.style.top = posY + "%";
   });
 });
+
