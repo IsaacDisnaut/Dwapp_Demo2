@@ -11,9 +11,9 @@ var x = false
 let room ="248932";
 var text
 
-
-
-
+function delay(ms) {
+  return new Promise(resolve => setTimeout(resolve, ms));
+}
 
 function createRoom() {
     console.log("Creating Room")
@@ -84,7 +84,8 @@ function joinRoom() {
      peer = new Peer()
     peer.on('open', (id) => {
         console.log("Connected room with Id: " + id)
-
+delay(5000).then(() => {
+});
         getUserMedia({ video: true, audio: true }, (stream) => {
             local_stream = stream;
             setLocalStream(local_stream)
@@ -258,4 +259,5 @@ document.addEventListener("keydown", (event) => {
     circle.style.top = posY + "%";
   });
 });
+
 
