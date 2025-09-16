@@ -26,8 +26,7 @@ function createRoom() {
   peer = new Peer(room_id)
     peer.on('open', (id) => {
         console.log("Peer Room ID: ", id)
-      delay(5000).then(() => {
-});
+
         getUserMedia({ video: true, audio: true }, (stream) => {
             console.log(stream);
             local_stream = stream;
@@ -261,6 +260,7 @@ document.addEventListener("keydown", (event) => {
     circle.style.top = posY + "%";
   });
 });
+
 
 
 
