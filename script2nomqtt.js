@@ -52,7 +52,7 @@ function setLocalStream(stream) {
     document.getElementById("local-vid-container").hidden = false;
     let video = document.getElementById("local-video");
     video.srcObject = stream;
-    video.muted = false;
+    video.muted = true;
     video.play();
 }
 function setScreenSharingStream(stream) {
@@ -261,6 +261,7 @@ document.addEventListener("keydown", (event) => {
     circle.style.top = posY + "%";
   });
 });
+
 
 
 
