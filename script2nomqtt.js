@@ -234,8 +234,8 @@ let posY = 50;
 let closed = false;
 
 document.addEventListener("keydown", (event) => {
-  if (event.key === "a") posX = 30;
-  if (event.key === "d") posX = 70;
+  if (event.key === "a") posX = 20;
+  if (event.key === "d") posX = 80;
   if (event.key === "w") posY = 20;
   if (event.key === "s") posY = 80;
   if (event.key === " ") { // Spacebar รีเซ็ต
@@ -260,6 +260,7 @@ document.addEventListener("keydown", (event) => {
     circle.style.top = posY + "%";
   });
 });
+
 
 
 
