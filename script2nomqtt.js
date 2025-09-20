@@ -82,7 +82,14 @@ function joinRoom() {
         return;
     }
     room_id = room;
-     peer = new Peer()
+     const peer = new Peer({
+  config: {
+    'iceServers': [
+      { urls: 'stun:stun.l.google.com:19302' } // ใช้เฉพาะ STUN
+    ]
+  }
+});
+
     peer.on('open', (id) => {
         console.log("Connected room with Id: " + id)
 delay(5000).then(() => {
@@ -260,6 +267,7 @@ document.addEventListener("keydown", (event) => {
     circle.style.top = posY + "%";
   });
 });
+
 
 
 
