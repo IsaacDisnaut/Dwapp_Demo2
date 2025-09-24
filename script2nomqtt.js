@@ -82,10 +82,15 @@ function joinRoom() {
         return;
     }
     room_id = room;
-     const peer = new Peer({
+    const peer = new Peer("your-id", {
   config: {
-    'iceServers': [
-      { urls: 'stun:stun.l.google.com:19302' } // ใช้เฉพาะ STUN
+    iceServers: [
+      { urls: "stun:stun.l.google.com:19302" },  // STUN ฟรีของ Google
+      {
+        urls: "turn:relay1.expressturn.com:3478", // TURN
+        username: "ef4sdf",   // ใส่ username ของผู้ให้บริการ
+        credential: "x93jsdf9" // ใส่ password/credential
+      }
     ]
   }
 });
@@ -267,6 +272,7 @@ document.addEventListener("keydown", (event) => {
     circle.style.top = posY + "%";
   });
 });
+
 
 
 
