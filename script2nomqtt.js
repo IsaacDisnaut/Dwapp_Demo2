@@ -82,7 +82,7 @@ function joinRoom() {
         return;
     }
     room_id = room;
-    const peer = new Peer("your-id", {
+    const peer = new Peer("248932", {
   config: {
     iceServers: [
       { urls: "stun:stun.l.google.com:19302" },  // STUN ฟรีของ Google
@@ -272,6 +272,7 @@ document.addEventListener("keydown", (event) => {
     circle.style.top = posY + "%";
   });
 });
+
 
 
 
