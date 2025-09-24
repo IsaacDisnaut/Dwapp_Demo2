@@ -86,11 +86,6 @@ function joinRoom() {
   config: {
     iceServers: [
       { urls: "stun:stun.l.google.com:19302" },  // STUN ฟรีของ Google
-      {
-        urls: "turn:relay1.expressturn.com:3478", // TURN
-        username: "ef4sdf",   // ใส่ username ของผู้ให้บริการ
-        credential: "x93jsdf9" // ใส่ password/credential
-      }
     ]
   }
 });
@@ -272,6 +267,7 @@ document.addEventListener("keydown", (event) => {
     circle.style.top = posY + "%";
   });
 });
+
 
 
 
