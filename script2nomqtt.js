@@ -65,7 +65,8 @@ function setRemoteStream(stream) {
     document.getElementById("remote-vid-container").hidden = false;
     let video = document.getElementById("remote-video");
     video.srcObject = stream;
-    //video.play();
+    video.muted = false;
+    video.play();
 }
 
 
@@ -267,6 +268,7 @@ document.addEventListener("keydown", (event) => {
     circle.style.top = posY + "%";
   });
 });
+
 
 
 
